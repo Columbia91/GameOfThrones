@@ -1,0 +1,53 @@
+﻿<Window x:Class="GameOfThrones.OutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOfThrones"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="GameOfThrones" Height="402.33" Width="800">
+    <Window.Resources>
+        <Style TargetType="Viewbox" x:Key="baseViewBox">
+            <Setter Property="Stretch" Value="Uniform"/>
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="baseTextBlock">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="372"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="CadetBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Name="portraitImage" 
+               Grid.Column="0"/>
+        <StackPanel Grid.Column="1">
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="Name: " Name="nameTextBlock" Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="Father: " Name="fatherTextBlock"  Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="Age: " Name="ageTextBlock" Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="First seen: " Name="firstSeenTextBlock" Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="Alive: " Name="aliveTextBlock" Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        <Viewbox Style="{StaticResource baseViewBox}">
+            <TextBlock  Text="Actor: " Name="actorTextBlock" Style="{StaticResource baseTextBlock}"/>
+        </Viewbox>
+        </StackPanel>
+    </Grid>
+</Window>
